@@ -1,6 +1,7 @@
 import * as Koa from 'koa';
 import * as koaBodyparser from 'koa-bodyparser'
 import * as mongoose from 'mongoose';
+import * as serve from 'koa-static';
 import {routes} from './src/config/route';
 
 mongoose.connect('mongodb://localhost/mydb', {useNewUrlParser: true});
@@ -10,6 +11,10 @@ db.once('open', (callback) => {
     console.log('数据库连接成功!')
 });
 const app = new Koa();
+
+// 配置静态web服务的中间件
+app.use(serve(__dirname + '/src/assets'));
+
 app.use(koaBodyparser())
 app.use(routes);
 

@@ -11,10 +11,6 @@
     "preserveConstEnums": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "lib": [
-      "dom",
-      "es2015"
-    ],
     "typeRoots": [
       "node_modules/@types",
       "node_modules/koa-custom-response/typings/response.d.ts",

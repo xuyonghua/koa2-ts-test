@@ -14,7 +14,6 @@ export default class UserHelper {
         const response: any = await User.create({
             userName: user.userName,
             password: user.password,
-            createAt: (new Date()).getTime(),
         }).then(res => {
             console.log(res)
             return res;
