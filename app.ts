@@ -13,7 +13,7 @@ db.once('open', (callback) => {
 const app = new Koa();
 
 // 配置静态web服务的中间件
-app.use(serve(__dirname + '/src/assets'));
+app.use(serve(__dirname + '/static'));
 
 app.use(koaBodyparser())
 app.use(routes);
